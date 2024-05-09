@@ -40,7 +40,7 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
-    - name: Build with Maven
+    - name: Test with Maven
       run:
         ./mvnw test
         -Dhttps.protocols=TLSv1.2
