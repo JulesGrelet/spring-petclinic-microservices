@@ -47,6 +47,9 @@
         <!-- The -load option is a shortcut for or -output=type=docker -->
         <!-- Could be changed by the -push option !-->
         <container.build.extraarg>--load</container.build.extraarg>
+
+        <sonar.organization>julesgrelet</sonar.organization>
+      <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     </properties>
 
     <dependencyManagement>
