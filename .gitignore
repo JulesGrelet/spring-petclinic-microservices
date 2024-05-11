@@ -1,11 +1,5 @@
 # Maven
-spring-petclinic-admin-server/target/
-spring-petclinic-api-gateway/target/
-spring-petclinic-config-server/target/
-spring-petclinic-customers-service/target/
-spring-petclinic-discovery-server/target/
-spring-petclinic-vets-service/target/
-spring-petclinic-visits-service/target/
+target/
 !.mvn/wrapper/maven-wrapper.jar
 
 # Jenv
