@@ -147,7 +147,7 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/clockbox:latest
         
-    #runs-on: ubuntu-latest
+    ##runs-on: ubuntu-latest
     #steps:
     #  - uses: actions/checkout@v4
     #  - name: Set up JDK 17
