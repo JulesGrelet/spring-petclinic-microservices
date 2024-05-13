@@ -115,6 +115,7 @@ jobs:
         run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=JulesGrelet_spring-petclinic-microservices
 
   docker-image:
+    needs: quality
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
