@@ -181,7 +181,7 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
       - name: Test
-        run: echo ${{ env.REGISTRY }}/${{ env.IMAGE_NAME}} ; ${{ steps.push.outputs.digest }}
+        run: echo "${{ env.REGISTRY }}/${{ env.IMAGE_NAME}} ; ${{ steps.push.outputs.digest }}"
       #- name: Generate artifact attestation
         #uses: actions/attest-build-provenance@v1
         #with:
