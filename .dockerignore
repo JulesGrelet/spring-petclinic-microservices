@@ -1,0 +1,12 @@
+.git
+.git/
+.github
+.github/
+.mvn
+.mvn/
+node_modules
+node_modules/
+
+.gitignore
+Dockerfile
+docker-compose.yml
