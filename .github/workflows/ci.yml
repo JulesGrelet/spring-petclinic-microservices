@@ -114,12 +114,9 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
       - name: Analyze with SonarCloud
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          GITHUB_TOKEN: ${{ secrets.GITHUBB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run:
-          echo "GITHUB_TOKEN = ${{ secrets.GITHUB_TOKEN }}"
-          echo "THIS_TOKEN = ${{ secrets.THIS_TOKEN }}"
-          mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=JulesGrelet_spring-petclinic-microservices
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=JulesGrelet_spring-petclinic-microservices
 
   package:
     name: Package
