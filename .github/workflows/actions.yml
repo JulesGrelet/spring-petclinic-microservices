@@ -151,7 +151,7 @@ jobs:
       #"VERSION_NUMBER_WITH_OFFSET=$((1000+GITHUB_RUN_NUMBER))" >> $GITHUB_ENV
         run: |
           echo "GITHUB_RUN_NUMBER=42" >> $GITHUB_ENV
-          echo "$GITHUB_RUN_NUMBER"
+          echo "${{ env.GITHUB_RUN_NUMBER }}"
           
       - name: Build and push Docker image
         id: push
