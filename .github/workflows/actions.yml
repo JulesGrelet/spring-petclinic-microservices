@@ -139,21 +139,6 @@ jobs:
         uses: docker/metadata-action@9ec57ed1fcdbf14dcef7dfbe97b2010124a938b7
         with:
           images: julesgrelet/petclinic
-      # test
-      - name: Output Run ID
-        run: echo ${{ github.run_id }}
-      - name: Output Run Number
-        run: echo ${{ github.run_number }}
-      - name: Output Run Attempt
-        run: echo ${{ github.run_attempt }}
-      # test
-      - name: Set env variables of image version
-      #"VERSION_NUMBER_WITH_OFFSET=$((1000+GITHUB_RUN_NUMBER))" >> $GITHUB_ENV
-        run: |
-          echo "VERSION_NUMBER_WITH_OFFSET=$((1000+GITHUB_RUN_NUMBER))" >> $GITHUB_ENV
-          echo "${{ env.VERSION_NUMBER_WITH_OFFSET }}"
-          echo "$VERSION_NUMBER_WITH_OFFSET"
-          
       - name: Build and push Docker image
         id: push
         uses: docker/build-push-action@3b5e8027fcad23fda98b2e3ac259d8d67585f671
@@ -161,7 +146,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ steps.meta.outputs.tags }}_1.1.${{ github.run_number }}
+          tags: ${{ steps.meta.outputs.tags }}_2.${{ github.run_number }}.${{ github.run_attempt }}
           labels: ${{ steps.meta.outputs.labels }}
       #- name: Generate artifact attestation
         #uses: actions/attest-build-provenance@v1
