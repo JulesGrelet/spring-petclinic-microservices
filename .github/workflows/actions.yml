@@ -146,7 +146,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ steps.meta.outputs.tags }}_1.0.${{ github.run_number }}
+          tags: ${{ steps.meta.outputs.tags }}_1.1.${{ github.run_number*10 }}
           labels: ${{ steps.meta.outputs.labels }}
       #- name: Generate artifact attestation
         #uses: actions/attest-build-provenance@v1
